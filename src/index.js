@@ -3,10 +3,25 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import 'bootstrap/dist/css/bootstrap.min.css';
- 
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+import Viewer from './Viewer';
+
 ReactDOM.render(
+
   <React.StrictMode>
-    <App />
+    <Router>
+      <Route path="/">
+          <App/>
+      </Route>
+      <Route path="/view">
+        <Viewer my_json_object={undefined}/>
+      </Route>
+    </Router>
   </React.StrictMode>,
   document.getElementById('root')
 );
